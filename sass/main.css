@@ -160,7 +160,7 @@ body {
 }
 .input-box input[type=number]::-moz-placeholder {
   color: rgb(21, 21, 21);
-  opacity: 0.25;
+  opacity: 0.5;
 }
 .input-box input[type=number]::placeholder {
   color: rgb(21, 21, 21);
