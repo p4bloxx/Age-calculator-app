@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap");
+/*Colors*/
+/*Tipography*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  /* max-width: 100%; */
+  border: none;
+  outline: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  background-color: rgb(240, 240, 240);
+}
+@media screen and (min-width: 75rem) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+}
+
+.form-age {
+  background-color: rgb(255, 255, 255);
+  margin-inline: 1rem;
+  margin-block-start: 5.5rem;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 1.5rem 1.5rem 6.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .form-age {
+    margin-inline: 3.5rem;
+    padding: 3.5rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .form-age {
+    margin-block: 8rem 8rem;
+    padding: 3.5rem;
+    width: 50.25rem;
+  }
+}
+
+.error-msg {
+  display: none;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: rgb(255, 89, 89);
+  transition: opacity 0.3s linear;
+}
+@media screen and (min-width: 48rem) {
+  .error-msg {
+    font-size: 0.875rem;
+  }
+}
+
+.active-err {
+  display: block;
+}
+
+.input-box {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: stretch;
+  /* Firefox */
+}
+@media screen and (min-width: 48rem) {
+  .input-box {
+    gap: 2rem;
+  }
+}
+.input-box label {
+  color: rgb(113, 111, 111);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  display: block;
+}
+.input-box .active-lab {
+  color: rgb(255, 89, 89);
+}
+.input-box input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  -webkit-appearance: rgb(21, 21, 21);
+     -moz-appearance: rgb(21, 21, 21);
+          appearance: rgb(21, 21, 21);
+  width: 5.47rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-block: 0.5rem;
+}
+.input-box input[type=number]:focus {
+  outline: 1px solid rgb(133, 77, 255);
+}
+.input-box input[type=number]::-moz-placeholder {
+  color: rgb(21, 21, 21);
+  opacity: 0.25;
+}
+.input-box input[type=number]::placeholder {
+  color: rgb(21, 21, 21);
+  opacity: 0.25;
+}
+@media screen and (min-width: 48rem) {
+  .input-box input[type=number] {
+    height: 4rem;
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .input-box input[type=number] {
+    /* width: 10rem; */
+    font-size: 2rem;
+    height: 4.5rem;
+  }
+}
+.input-box .active-inp {
+  outline: 1px solid rgb(255, 89, 89);
+}
+
+.submit-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit-box #grey-line {
+  /*  align-self: stretch; */
+  background-color: rgb(220, 220, 220);
+  height: 1px;
+  display: block;
+  width: 100%;
+  margin-block: 2rem;
+}
+@media screen and (min-width: 48rem) and (max-width: 74.9rem) {
+  .submit-box #grey-line {
+    margin-block: 3rem;
+  }
+}
+.submit-box #submit-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  background-color: rgb(133, 77, 255);
+  transition: all 0.3s linear;
+  position: absolute;
+}
+.submit-box #submit-btn #arrow {
+  width: 1.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .submit-box #submit-btn {
+    width: 5rem;
+    height: 5rem;
+  }
+  .submit-box #submit-btn #arrow {
+    width: 2rem;
+  }
+}
+@media screen and (min-width: 75rem) {
+  .submit-box #submit-btn {
+    width: 6rem;
+    height: 6rem;
+    right: 0;
+  }
+  .submit-box #submit-btn #arrow {
+    width: 2.75rem;
+  }
+}
+.submit-box #submit-btn:hover {
+  background-color: rgb(21, 21, 21);
+}
+
+.result-box {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1.12px;
+  line-height: 1.1;
+}
+@media screen and (min-width: 48rem) {
+  .result-box {
+    font-size: 6rem;
+  }
+}
+.result-box span {
+  color: rgb(133, 77, 255);
+  margin-inline-end: 0.5rem;
+}
+@media screen and (min-width: 75rem) {
+  .result-box {
+    font-size: 6.875rem;
+    letter-spacing: -2.08px;
+  }
+}/*# sourceMappingURL=main.css.map */

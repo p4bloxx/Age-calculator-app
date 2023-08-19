@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap');
+@import "variables and components";
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  /* max-width: 100%; */
+  border: none;
+  outline: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+};
+
+
+
+body{
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  background-color: $grey-bg;
+  
+    @media screen and (min-width: 75rem) {
+      display: grid;
+      place-content: center;
+    }
+}
+
+.form-age{
+  background-color: $white;
+  margin-inline: 1rem;
+  margin-block-start: 5.5rem;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 1.5rem 1.5rem 6.25rem;
+
+    @media screen and (min-width:48rem) {
+      margin-inline: 3.5rem;
+      padding: 3.5rem;
+    }
+
+    @media screen and (min-width: 75rem) {
+      margin-block: 8rem 8rem;
+      padding: 3.5rem;
+      width: 50.25rem;
+    }
+}
+
+.error-msg{
+  display: none;
+  font-size: $fs-12;
+  font-style: italic;
+  color: $red;
+  transition: opacity 0.3s linear;
+
+    @media screen and (min-width: 48rem) {
+      font-size: $fs-14;
+    }
+}
+
+.active-err{
+  display: block;
+}
+
+.input-box{
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: stretch;
+  
+  @media screen and (min-width:48rem) /* and (max-width: 74.9rem) */ {
+    gap: 2rem;
+  }
+
+   label{
+      color: $grey-label;
+      font-weight: $fw-bld;
+      font-size: $fs-12;
+      letter-spacing: 3px;
+      display: block;
+    }
+
+   .active-lab{
+    color: $red;
+   }
+  
+
+  /* Firefox */
+  input[type=number] {
+    appearance: textfield;
+    appearance: $black;
+    width: 5.47rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid $grey-line;
+    border-radius: 8px;
+    font-size: $fs-20;
+    font-weight: $fw-bld;
+    margin-block: 0.5rem;
+
+      &:focus{
+        outline: 1px solid $purple-accent;
+      }
+
+      &::placeholder{
+        color: $black;
+        opacity: 0.25;
+      }
+      
+      @media screen and (min-width:48rem) /* and (max-width: 74.9rem) */ {
+        height: 4rem;
+        width: 10rem;
+      }
+
+      @media screen and (min-width: 75rem) {
+        /* width: 10rem; */
+        font-size: $fs-32;
+        height: 4.5rem;
+      }
+  }
+
+  .active-inp{
+    outline: 1px solid $red;
+  }
+}
+
+.submit-box{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #grey-line{
+    /*  align-self: stretch; */
+     background-color: $grey-line;
+     height: 1px;
+     display:block;
+     width: 100%;
+     margin-block: 2rem;
+
+      @media screen and (min-width: 48rem) and (max-width: 74.9rem) {
+        margin-block: 3rem;
+      }
+   }
+
+   #submit-btn{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    background-color: $purple-accent;
+    transition: all 0.3s linear;
+    position: absolute;
+
+      #arrow{
+        width: 1.5rem;
+      }
+
+      @media screen and (min-width: 48rem) {
+        width: 5rem;
+        height: 5rem;
+
+        #arrow{
+          width: 2rem;
+        }
+      }
+      
+      @media screen and (min-width: 75rem) {
+        width: 6rem;
+        height: 6rem;
+        right: 0;
+
+        #arrow{
+          width: 2.75rem;
+        }
+      }
+
+      &:hover{
+        background-color: $black;
+      }
+  }
+}
+
+.result-box{
+  font-size: $fs-56;
+  font-weight: $fw-xBld;
+  font-style: $fst-italic;
+  letter-spacing: -1.12px;
+  line-height: 1.1;
+
+    @media screen and (min-width: 48rem) {
+      font-size: $fs-96;
+    }
+
+    span{
+      color: $purple-accent;
+      margin-inline-end: 0.5rem;
+    }
+
+    @media screen and (min-width: 75rem) {
+      font-size: $fs-104;
+      letter-spacing: -2.08px;
+    }
+}

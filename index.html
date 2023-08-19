@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age calculator app</title>
+  <link rel="stylesheet" href="sass/main.css">
+  <link rel="stylesheet" href="sass/variables and components.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <form class="form-age" id="form">
+    <div class="input-box">
+      <div>
+        <label id="labDay" for="day">DAY</label>
+        <input type="number" name="" id="day" placeholder="DD">
+        <span id="errDay" class="error-msg">Must be a valid day</span>
+      </div>
+      <div>
+        <label id="labMonth" for="month">MONTH</label>
+        <input type="number" name="" id="month" placeholder="MM">
+        <span id="errMonth" class="error-msg">Must be a valid month</span>
+      </div>
+      <div>
+        <label id="labYears" for="years">YEAR</label>
+        <input type="number" name="" id="years" placeholder="YYYY">
+        <span id="errYears" class="error-msg">Must be in the past</span>
+      </div>
+    </div>
+
+    <div class="submit-box">
+      <span id="grey-line"></span>
+      <button id="submit-btn" type="button"><img src="assets/images/icon-arrow.svg" alt="" id="arrow"></button>
+    </div>
+
+    <div class="result-box">
+      <p><span id="resYears">--</span>years</p>
+      <p><span id="resMonth">--</span>months</p>
+      <p><span id="resDay">--</span>days</p>
+    </div>
+  </form>
+</body>
+</html>
