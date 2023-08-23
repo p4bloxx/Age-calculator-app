@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Age calculator app</title>
   <link rel="stylesheet" href="sass/main.css">
-  <link rel="stylesheet" href="sass/variables and components.css">
+  <link rel="stylesheet" href="sass/variablesandcomponents.css">
   <script defer src="js/script.js"></script>
 </head>
 <body>
@@ -13,17 +13,17 @@
     <div class="input-box">
       <div>
         <label id="labDay" for="day">DAY</label>
-        <input type="number" name="" id="day" placeholder="DD">
+        <input type="number" name="input-day" id="day" placeholder="DD" autocomplete="off" aria-roledescription="input-day">
         <span id="errDay" class="error-msg">Must be a valid day</span>
       </div>
       <div>
         <label id="labMonth" for="month">MONTH</label>
-        <input type="number" name="" id="month" placeholder="MM">
+        <input type="number" name="input-month" id="month" placeholder="MM" autocomplete="off" aria-roledescription="input-month">
         <span id="errMonth" class="error-msg">Must be a valid month</span>
       </div>
       <div>
         <label id="labYears" for="years">YEAR</label>
-        <input type="number" name="" id="years" placeholder="YYYY">
+        <input type="number" name="input-years" id="years" placeholder="YYYY" autocomplete="off" aria-roledescription="input-year">
         <span id="errYears" class="error-msg">Must be in the past</span>
       </div>
     </div>
