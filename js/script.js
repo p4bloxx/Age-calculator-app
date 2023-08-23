@@ -109,16 +109,17 @@ function checkInput () {
       } 
   
       //check if number of month is correct
-      if (month.value.length > 2 || month.value > 12) {
+      if (month.value.length > 2) {
   
         month.classList.add('active-inp');
         labMonth.classList.add('active-lab');
         errMonth.classList.add('active-err');
         errMonth.innerText = 'Must be a valid month';
         checkMonth = false;
-  
-        //particularly in february
-      } else if (month.value == 2 && day.value > 29) {
+      }
+      
+      //particularly in february
+      if (month.value == 2 && day.value > 29) {
   
         day.classList.add('active-inp');
         labDay.classList.add('active-lab');
@@ -181,7 +182,7 @@ function checkInput () {
        }
   
        //check if month's value are correct
-       if (month.value.length > 2) {
+       if (month.value.length > 2 || month.value > 12) {
         month.classList.add('active-inp');
         labMonth.classList.add('active-lab');
         errMonth.classList.add('active-err');
@@ -280,7 +281,7 @@ function calcAge () {
     resMonth.innerText = currMonth - resultMonth;
     resDay.innerText = currDay - resultDay;
 
-  } else if (resultYears == currYears && resultMonth < currMonth && resultDay > currDay) {
+  } else if (resultYears == currYears && resultMonth < currMonth && resultDay > currDay && resultMonth < 12) {
     resYears.innerText = resultYears - currYears;
     resMonth.innerText = (currMonth - resultMonth) - 1;
     resDay.innerText = 30 - (resultDay - currDay);
